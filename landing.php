@@ -13,6 +13,7 @@
           <!-- Mask & flexbox options-->
           <div class="mask rgba-gradient align-items-center">
             <main>
+
     </main>
     <!--/Main layout-->
 

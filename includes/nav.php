@@ -58,7 +58,9 @@
     <?php echo "<li><a href='#'>Welcome ".$_SESSION['first']."   ".$_SESSION['last']."</a></li>"; ?>
     <ul class="nav navbar-nav nav-flex-icons ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href='index.php'><i class="fas fa-sign-out-alt"></i> <span class="clearfix d-none d-sm-inline-block white-text">Logout</span></a>
+        <form class="" action="includes/login.php" method="post">
+          <button type="submit" name="logout-now" class="nav-link" href='index.php'><i class="fas fa-sign-out-alt"></i> <span class="clearfix d-none d-sm-inline-block white-text">Logout</span></button>
+        </form>
       </li>
       <li class="nav-item">
         <a class="nav-link" href='landing.php'><i class="fas fa-home"></i> <span class="clearfix d-none d-sm-inline-block white-text">Home</span></a>

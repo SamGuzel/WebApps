@@ -1,4 +1,5 @@
 <?php
+// if login button pressed
 if (isset($_POST['login-now'])) {
   //include the database connections
   require 'dbconnect.php';
@@ -48,13 +49,25 @@ if (isset($_POST['login-now'])) {
                 $_SESSION['phone'] = $row['phone'];
                 header("Location: ../landing.php?logged_in");
                 mysqli_close($conn);
-
                 exit();
             }
         }
     }
   }
-} else {
-  echo 'not posting';
+// if logout button pressed
+} elseif (isset($_POST['logout-now'])) {
+    require 'dbconnect.php';
+    session_start();
+    if (isset($_SESSION['ID'])) {
+      session_unset();
+      session_destroy();
+      mysqli_close($conn);
+      header("Location: ../index.php?SuccessfullyLoggedOut");
+      exit();
+    }
 }
+else {
+  echo 'not posting'.$_SESSION['ID'];
+}
+
  ?>
